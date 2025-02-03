@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -11,8 +11,8 @@ export class CreatePdfService {
   constructor(
     private _http: HttpClient) { }
 
-   public createPdf(){
-      this._http.post(environment.baseUrl + '/pdf/create', {}, { responseType: 'blob' }).subscribe(
+   public createPdf(nome: string, fone: string, descricao: string){
+      this._http.post(environment.baseUrl + '/pdf/create/' + nome + '/' + fone + '/' + descricao, {}, { responseType: 'blob' }).subscribe(
         (response: Blob) => {
           const url = window.URL.createObjectURL(response);
           const a = document.createElement('a');

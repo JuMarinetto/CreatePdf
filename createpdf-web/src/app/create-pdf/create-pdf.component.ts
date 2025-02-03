@@ -8,16 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePdfComponent implements OnInit {
 
+    nome: string;
+    fone: string;
+    descricao: string;
+
   constructor(
     private service : CreatePdfService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
   getPdf(): void{
-    this.service.createPdf();
+    this.service.createPdf(this.nome, this.fone, this.fone)
     console.log("testettetetetetettetet");
+    console.log(this.nome);
 
   }
+
+
 }

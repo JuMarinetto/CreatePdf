@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CreatePdfComponent } from './create-pdf/create-pdf.component';
 import { CreatePdfModule } from './create-pdf/create-pdf.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     CreatePdfModule

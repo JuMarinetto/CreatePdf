@@ -1,5 +1,19 @@
 <div>
 
-  <button (click)="getPdf()"> Aperte aqui para gerar seu Pdf</button>
+  <div>
+    <label>Coloque seu Nome:</label>
+    <input id="Nome" pInputText [(ngModel)]="nome"/>
+  </div>
+  <div>
+    <label>Coloque seu Telefone:</label>
+    <input id="Fone" pInputText [(ngModel)]="fone"/>
+  </div>
+  <div>
+    <label>Coloque uma Descrição:</label>
+    <input id="Descrição" pInputText [(ngModel)]="descricao"/>
+  </div>
+  <div>
+    <button (click)="getPdf()"> Aperte aqui para gerar seu Pdf</button>
+  </div>
 
 </div>

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -14,14 +15,14 @@ import net.sf.jasperreports.engine.JasperPrint;
 @Service
 public class PdfService {
 	
-	public byte[] getPdf() throws IOException{
+	public byte[] getPdf(@RequestBody String nome,@RequestBody String fone,@RequestBody String descricao) throws IOException{
 		
 		String jasperFile = "D:/Leitura_Jasper/Pdf.jasper";
 		
 		Map<String, Object> parametros = new HashMap<>();
-		parametros.put("nome", "Abc Technology");
-		parametros.put("fone", "(11) 9-8219-3667");
-		parametros.put("complemento", "Esse é um teste para ver se funcionaaaaaa");
+		parametros.put("nome", nome);
+		parametros.put("fone", fone);
+		parametros.put("complemento", descricao);
 		
 		byte[] content = {};
 		try {
